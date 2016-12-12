@@ -14,7 +14,7 @@ if(!isset($_REQUEST['params']) && !isset($_REQUEST['source_url'])){
 	die('');
 }
 
-if(!isset($_REQUEST['source_url'])){
+if(!isset($_REQUEST['source_url']) || preg_match('/^http/',$_REQUEST['source_url']) ){
 	die('');
 }
 $response = new Response();
