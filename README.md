@@ -20,7 +20,7 @@ A 3MB file request:
 - User
 the average results under 500ms (95% of which is getting the image from source)
 
-![alt text](https://github.com/goroomer/image-proxy/raw/master/src/docs/diagram.png "Response time(ms)")
+![alt text](https://github.com/goroomer/image-proxy/raw/master/src/docs/avg_latency.png "Response time(ms)")
 
 CPU Load
 ------
