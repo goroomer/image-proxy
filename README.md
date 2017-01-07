@@ -87,7 +87,6 @@ Create a working image proxy
             index index.php;
             rewrite ^/check^ / last; 
             rewrite ^/(.*)/(.*\:.*) /?source_url=$2&params=$1 last; 
-            #try_files $uri $uri/ index.html;
     }
     
 ##### At this point you have a working proxy
@@ -112,3 +111,8 @@ TODO
 - Create sample nginx & php conf files
 - Add some security features to the code
 - Add Redis cache adapter
+
+
+Thanks
+======
+- Oliver Vogel, for his intervention/image library http://image.intervention.io/
