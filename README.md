@@ -3,9 +3,6 @@ Overview
 This little project was built to answare our need for a simple image proxy solution.
 It is very light, using GD/iMagick through the image intervention library by Oliver Vogel.
 
-Thanks
-======
-- Oliver Vogel, for his intervention/image library http://image.intervention.io/
 
 Deployment
 ======
@@ -115,3 +112,9 @@ TODO
 - Create sample nginx & php conf files
 - Add some security features to the code
 - Add Redis cache adapter
+
+
+Thanks
+======
+- Oliver Vogel, for his intervention/image library http://image.intervention.io/
+
