@@ -3,6 +3,10 @@ Overview
 This little project was built to answare our need for a simple image proxy solution.
 It is very light, with no frameworks to slow down the request.
 
+Thanks
+======
+- Oliver Vogel, for his intervention/image library http://image.intervention.io/
+
 Deployment
 ======
 ![alt text](https://github.com/goroomer/image-proxy/raw/master/src/docs/diagram.png "Solution implementation")
@@ -111,8 +115,3 @@ TODO
 - Create sample nginx & php conf files
 - Add some security features to the code
 - Add Redis cache adapter
-
-
-Thanks
-======
-- Oliver Vogel, for his intervention/image library http://image.intervention.io/
