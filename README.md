@@ -64,33 +64,11 @@ Installation
 ======
 
 The installation is really straight forward, you can use chef / docker if you know how.
-or skip the overhead and deploy a plain installation with ec2 images and basic bash scripts 
+or skip the overhead and deploy a plain installation with ec2 images and basic bash scripts
 
-Create a working image proxy 
+Deploy From Comunity AMI: 
 ------
-- Setup an EC2 instance on which you'll create the basic settings
-- Install php7.0, nginx & git on the EC2
-
-         sudo add-apt-repository ppa:ondrej/php
-         sudo apt-get update
-         sudo apt install nginx php-fpm php-gd git
- 
-- Clone this repository to your folder of choice (i.e /home/image-proxy/)
-
-         cd /home
-         git clone https://github.com/goroomer/image-proxy.git
-         
-- Create a virtual host with your domain static.yourdomain.com , set root to src folder (i.e /home/image-proxy/src)
-- Set thees redirect rules
-
-
-    location / {
-            index index.php;
-            rewrite ^/check^ / last; 
-            rewrite ^/(.*)/(.*\:.*) /?source_url=$2&params=$1 last; 
-    }
-    
-##### At this point you have a working proxy
+    ami-aff007b9
 
 Create a redundant AWS auto scaling deployment
 ------
