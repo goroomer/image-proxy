@@ -72,9 +72,8 @@ Deploy From Comunity AMI:
 
 Create a redundant AWS auto scaling deployment
 ------
-- Save the EC2 instance as an AMI
 - Create VPC with at lease 2 availability zones (for redundancy)
-- Create launch configurations for the AMI and VPC
+- Create launch configurations for the AMI(ami-aff007b9) and VPC
 - Create an Auto Scaling Group for the Launch Configuration
 - Create Scaling policies
 - Create Target Group under LOAD BALANCING in the EC2 tab (set health check to path: /check )
