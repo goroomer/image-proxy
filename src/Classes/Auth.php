@@ -8,7 +8,6 @@
 
 class Auth {
 	private $authenticated;
-
 	public function __construct($params) {
 		$this->authenticated = false;
 		$this->authenticate($params);
@@ -19,8 +18,6 @@ class Auth {
 	}
 
 	private function authenticate($params){
-		$start  = microtime();
-		$this->times['auth'] = microtime() - $start;
 		$this->authenticated = true;
 	}
 }
