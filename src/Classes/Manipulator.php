@@ -85,7 +85,7 @@ class Manipulator
                     $params['text-y'] = $res_array[1];
                     break;
                 case 'watermark':
-                    $params['watermark-url'] = str_replace('-//','://',$value);
+                    $params['watermark-url'] = base64_decode($value);
                     $params['watermark-location'] = 'top-left';
                     $params['watermark-x'] = 0;
                     $params['watermark-y'] = 0;
