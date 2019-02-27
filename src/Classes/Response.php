@@ -22,14 +22,14 @@ class Response
     }
 
 	private function auth(){
-		$authenticator = new Auth($_REQUEST);
+		$authenticator = new Auth($GLOBALS);
 		if(!$authenticator->is_authenticated()){
 			$this->render('Error', 'Auth Error: Check your credentials');
 		}
 	}
 
 	private function set_image(){
-		$request = new Request($_REQUEST['source_url']);
+		$request = new Request($GLOBALS['source_url']);
 		if(count($request->errors) > 0){
 			return $this->render('Error',json_encode($request->errors));
 		}
@@ -37,7 +37,7 @@ class Response
 	}
 
     private function manipulate_image(){
-    	$params= isset($_REQUEST['params']) ? $_REQUEST['params'] : '';
+    	$params= isset($GLOBALS['params']) ? $GLOBALS['params'] : '';
         $manipulator = new Manipulator($this->source_image,$params);
 	    if(count($manipulator->errors) > 0){
 		    return $this->render('Error',json_encode($manipulator->errors));
