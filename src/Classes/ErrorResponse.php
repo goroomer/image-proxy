@@ -10,7 +10,7 @@ class ErrorResponse
     }
 
     private function render($severity, $msg, $args = array()){
-         header('Cache-Control: no-store');
+         header('Cache-Control: no-cache');
          echo json_encode(array(
             'status' => 'Failed',
             'severity' => $severity,
