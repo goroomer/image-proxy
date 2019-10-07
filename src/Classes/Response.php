@@ -53,11 +53,6 @@ class Response
 		$this->render('Image',$this->output_image->getContent(),$args);
 	}
 
-
-
-
-
-
     private function render($type,$msg,$args = array() ){
         switch ($type) {
             case 'Error':

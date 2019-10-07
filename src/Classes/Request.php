@@ -24,6 +24,9 @@ class Request {
 			//caching goes here
 			$params['content'] = file_get_contents($url);
 			$params['source_url'] = $url;
+			if(empty($params['content'])){
+			    trigger_error("Image not found", E_USER_ERROR);
+			}
 			$this->source_image = new Image($params);
 			return $this->source_image;
 		}catch (\Exception $e){
