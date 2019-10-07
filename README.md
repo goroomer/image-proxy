@@ -66,6 +66,30 @@ Installation
 The installation is really straight forward, you can use chef / docker if you know how.
 or skip the overhead and deploy a plain installation with ec2 images and basic bash scripts
 
+Ngnix configuration example: 
+------
+```
+server {
+        listen       8081;
+        server_name  localhost;
+        root /<path-to-folder>/image-proxy/src;       
+     
+        location / {
+            index index.php;
+            rewrite ^/check$ / last;
+            rewrite ^/(.*)/(.*\:.*) /?source_url=$2&params=$1 last;
+        }
+        location ~ \.php$ {
+                include fastcgi_params;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                fastcgi_index index.php;
+                fastcgi_pass 127.0.0.1:9000;
+                include fastcgi_params;
+                fastcgi_intercept_errors on;
+        }
+}
+```
+
 Deploy From Comunity AMI: 
 ------
     ami-aff007b9
