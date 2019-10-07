@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit137b9d1ea0e664ba3babff3a7dc68e14
 {
     public static $files = array (
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
     );
 
