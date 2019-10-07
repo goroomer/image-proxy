@@ -11,6 +11,7 @@ class ErrorResponse
 
     private function render($severity, $msg, $args = array()){
          header('Cache-Control: no-cache');
+         http_response_code(404);
          echo json_encode(array(
             'status' => 'Failed',
             'severity' => $severity,
