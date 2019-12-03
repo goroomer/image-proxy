@@ -70,23 +70,26 @@ Ngnix configuration example:
 ------
 ```
 server {
-        listen       8081;
-        server_name  localhost;
-        root /<path-to-folder>/image-proxy/src;       
-     
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /home/ubuntu/image-proxy/src;
+
+        # Add index.php to the list if you are using PHP
+        index index.php index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
         location / {
-            index index.php;
-            rewrite ^/check$ / last;
-            rewrite ^/(.*)/(.*\:.*) /?source_url=$2&params=$1 last;
+                index index.php;
+                rewrite ^/check$ / last;
+                rewrite ^/(.*)/(.*\:.*) /?source_url=$2&params=$1 last;
         }
         location ~ \.php$ {
-                include fastcgi_params;
-                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-                fastcgi_index index.php;
-                fastcgi_pass 127.0.0.1:9000;
-                include fastcgi_params;
-                fastcgi_intercept_errors on;
+                include snippets/fastcgi-php.conf;
+                fastcgi_pass unix:/run/php/php7.3-fpm.sock;
         }
+
 }
 ```
 
